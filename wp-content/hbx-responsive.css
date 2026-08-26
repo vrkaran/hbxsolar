@@ -40,18 +40,149 @@ iframe {
   height: auto;
 }
 
-/* Header logo */
+/* ========== Header / navbar — compact & aligned ========== */
+.pix-banner.pix-intro-1 {
+  display: none !important;
+}
+
+.elementor-location-header.elementor-6964 {
+  position: relative;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+.elementor-6964 .elementor-element-e7ca107.e-con-boxed {
+  --content-width: 1180px !important;
+  --padding-top: 6px !important;
+  --padding-bottom: 6px !important;
+  --align-items: center !important;
+  --gap: 12px 16px !important;
+  --row-gap: 8px !important;
+  --column-gap: 16px !important;
+  min-height: 0 !important;
+}
+
+.elementor-6964 .elementor-element-e7ca107.e-con-boxed > .e-con-inner {
+  max-width: 1180px !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+  padding-left: clamp(16px, 2.5vw, 28px) !important;
+  padding-right: clamp(16px, 2.5vw, 28px) !important;
+  align-items: center !important;
+  min-height: 64px !important;
+  gap: 12px 18px !important;
+}
+
+/* Logo column */
+.elementor-6964 .elementor-element-be7659b {
+  --width: auto !important;
+  --padding-top: 0px !important;
+  --padding-bottom: 0px !important;
+  --padding-left: 0px !important;
+  --padding-right: 0px !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+}
+
+.elementor-6964 .elementor-element-9dd147b {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.elementor-6964 .elementor-element-9dd147b .xpro-site-logo,
+.elementor-6964 .xpro-site-logo {
+  display: inline-flex !important;
+  align-items: center !important;
+  line-height: 0 !important;
+}
+
+.elementor-6964 .elementor-element-9dd147b .xpro-site-logo img,
 .elementor-6964 .xpro-site-logo img,
 .xpro-site-logo img {
-  width: auto !important;
-  max-width: 72px !important;
+  width: 88px !important;
+  max-width: 88px !important;
   max-height: 56px !important;
   height: auto !important;
-  object-fit: contain;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* Menu column — grows, centers links */
+.elementor-6964 .elementor-element-d4a629c {
+  --width: auto !important;
+  width: auto !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.elementor-6964 .elementor-element-c5cbc4b {
+  width: 100% !important;
+}
+
+.elementor-6964 .xpro-elementor-horizontal-navbar-nav {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 2px 4px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.elementor-6964 .xpro-elementor-horizontal-navbar-nav > li > a.xpro-elementor-nav-link {
+  padding: 6px 12px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+}
+
+/* CTA column */
+.elementor-6964 .elementor-element-3f18b1b {
+  --width: auto !important;
+  width: auto !important;
+  flex: 0 0 auto !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+}
+
+.elementor-6964 .elementor-element-4c86f7b .xpro-elementor-button {
+  padding: 8px 18px !important;
+  line-height: 1.2 !important;
+  min-height: 0 !important;
+}
+
+.elementor-6964 .elementor-element-4c86f7b .xpro-elementor-button .xpro-button-text {
+  font-size: 13px !important;
+  font-weight: 600 !important;
 }
 
 .elementor-6964 .e-con-inner {
   align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .elementor-6964 .elementor-element-e7ca107.e-con-boxed > .e-con-inner {
+    min-height: 58px !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+  }
+  .elementor-6964 .elementor-element-9dd147b .xpro-site-logo img,
+  .elementor-6964 .xpro-site-logo img,
+  .xpro-site-logo img {
+    width: 76px !important;
+    max-width: 76px !important;
+    max-height: 48px !important;
+  }
 }
 
 /* Maps */
@@ -196,15 +327,29 @@ body:not(.render) .pix-overlay-item {
 
 /* ========== MOBILE ========== */
 @media (max-width: 767px) {
+  .elementor-6964 .elementor-element-be7659b {
+    min-width: 0 !important;
+  }
+  .elementor-6964 .elementor-element-9dd147b .xpro-site-logo img,
   .elementor-6964 .xpro-site-logo img,
   .xpro-site-logo img {
-    max-width: 56px !important;
+    width: 68px !important;
+    max-width: 68px !important;
     max-height: 44px !important;
   }
 
-  .elementor-6964 .elementor-element.elementor-element-e7ca107 .e-con-inner {
+  .elementor-6964 .elementor-element-e7ca107.e-con-boxed {
+    --padding-top: 4px !important;
+    --padding-bottom: 4px !important;
+  }
+
+  .elementor-6964 .elementor-element.elementor-element-e7ca107 .e-con-inner,
+  .elementor-6964 .elementor-element-e7ca107.e-con-boxed > .e-con-inner {
     padding-left: 12px !important;
     padding-right: 12px !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    min-height: 52px !important;
   }
 
   .elementor-6739 .elementor-element.elementor-element-2d7b38b2 {
@@ -455,6 +600,30 @@ body:not(.render) .pix-overlay-item {
     --flex-direction: column !important;
     flex-direction: column !important;
   }
+}
+
+/* Homepage hero: collapse blank divider bands; keep copy inside green hero */
+.elementor-3513 > .elementor-element-a460054,
+.elementor-3513 > .elementor-element-0f45c54 {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+.elementor-3513 .elementor-element-d8479df {
+  background-image: linear-gradient(to right, #55ba63, #5ecc62, #98d662) !important;
+  background-attachment: scroll !important;
+  background-color: #55ba63 !important;
+}
+.elementor-3513 .elementor-element-d8479df .pix-highlighted-text,
+.elementor-3513 .elementor-element-d8479df .pix-el-text,
+.elementor-3513 .elementor-element-d8479df .pix-el-text p,
+.elementor-3513 .elementor-element-d8479df .hbx-city-rotator {
+  color: #fff !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Homepage (3513) basic responsive helpers */
