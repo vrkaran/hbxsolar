@@ -1,0 +1,14 @@
+﻿@font-face {
+  font-family: 'Tai Heritage Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(s/taiheritagepro/v9/sZlfdQid-zgaNiNIYcUzJMU3IYyNkHtYFA-1.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Tai Heritage Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(s/taiheritagepro/v9/sZlYdQid-zgaNiNIYcUzJMU3IYyNmMB9BNNPNg-1.ttf) format('truetype');
+}
