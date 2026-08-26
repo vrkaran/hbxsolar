@@ -1,0 +1,28 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    {
+      "source": "/solar-panel-installation-in-varanasi",
+      "destination": "/solar-panel-installation-in-varanasi/index.html"
+    },
+    {
+      "source": "/solar-panel-installation-in-varanasi/",
+      "destination": "/solar-panel-installation-in-varanasi/index.html"
+    },
+    {
+      "source": "/solar-panel-installation-in-varanasi/index-1.htm",
+      "destination": "/solar-panel-installation-in-varanasi/index.html"
+    },
+    { "source": "/index-1.htm", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/wp-content/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}
