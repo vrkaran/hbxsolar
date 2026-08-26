@@ -89,6 +89,20 @@ iframe {
   opacity: 1 !important;
 }
 
+/* Homepage / site-wide: never trap content behind page-transition overlay */
+.pix-page-loading-bg,
+.pix-page-loading-bg:after,
+.pix-loading-circ-path {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+body:not(.render) .pix-overlay-item {
+  opacity: 1 !important;
+}
+
 /* Elementor containers: prevent horizontal overflow on small screens */
 @media (max-width: 1024px) {
   .e-con,

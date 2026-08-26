@@ -1,17 +1,34 @@
-/* HBX — mobile menu + responsive helpers */
+/* HBX — mobile menu + responsive helpers + hero unlock */
 (function () {
   function ready(fn) {
     if (document.readyState !== "loading") fn();
     else document.addEventListener("DOMContentLoaded", fn);
   }
 
-  ready(function () {
-    // Background images: mark containers as loaded
+  function unlockPage() {
+    var body = document.body;
+    if (!body) return;
+    body.classList.add("render", "pix-loaded");
+    document.documentElement.classList.add("hbx-ready");
+    // Reveal Elementor animated widgets that stay invisible without frontend JS
+    document.querySelectorAll(".elementor-invisible").forEach(function (n) {
+      n.classList.remove("elementor-invisible");
+      n.classList.add("animated");
+    });
     document.querySelectorAll(".e-con").forEach(function (n) {
       n.classList.add("e-lazyloaded");
     });
+    var loader = document.querySelector(".pix-page-loading-bg");
+    if (loader) loader.style.display = "none";
+  }
 
-    // Mobile nav fallback (works even if XPRO remote JS fails)
+  // Unlock ASAP so hero is not stuck behind white overlay
+  unlockPage();
+  ready(unlockPage);
+  window.addEventListener("load", unlockPage);
+
+  ready(function () {
+    // Mobile nav fallback
     document.querySelectorAll(".xpro-elementor-horizontal-menu-toggler").forEach(function (btn) {
       btn.addEventListener("click", function (e) {
         e.preventDefault();
@@ -38,17 +55,21 @@
       });
     });
 
-    // City rotator
+    // City rotator(s): Varanasi → Azamgarh → Mau → Prayagraj
     var cities = ["Varanasi", "Azamgarh", "Mau", "Prayagraj"];
-    var el = document.getElementById("hbx-city-rotator");
-    if (el) {
+    var nodes = document.querySelectorAll("#hbx-city-rotator, .hbx-city-rotator");
+    if (nodes.length) {
       var i = 0;
       setInterval(function () {
-        el.classList.add("is-swapping");
+        nodes.forEach(function (el) {
+          el.classList.add("is-swapping");
+        });
         setTimeout(function () {
           i = (i + 1) % cities.length;
-          el.textContent = cities[i];
-          el.classList.remove("is-swapping");
+          nodes.forEach(function (el) {
+            el.textContent = cities[i];
+            el.classList.remove("is-swapping");
+          });
         }, 350);
       }, 2800);
     }
