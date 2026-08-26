@@ -2,7 +2,7 @@
 <html lang="en-US" prefix="og: https://ogp.me/ns#">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
 	        <style>
         html {
             --pix-pagetransition-bg: #FFFFFF;
@@ -186,46 +186,10 @@ gtag("config", "GT-TWR8VGFG");
 </script>
 <link rel="https://api.w.org/" href="../wp-json/index-1.htm"><link rel="alternate" title="JSON" type="application/json" href="../wp-json/wp/v2/pages/6739-1"><link rel='shortlink' href='index-1.htm?p=6739'>
 <meta name="generator" content="Site Kit by Google 1.182.0"><meta name="generator" content="Elementor 4.1.4; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-swap">
-			<style id="hbx-local-fixes">
-				/* Keep Elementor background images visible without lazy-load JS */
-				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
-				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) *,
-				.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
-				.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) *,
-				.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
-				.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
-					/* overridden below — do not blank backgrounds */
-				}
+						<style id="hbx-local-fixes">
 				.elementor-invisible {
 					visibility: visible !important;
 					opacity: 1 !important;
-				}
-				img {
-					max-width: 100%;
-					height: auto;
-				}
-				.hbx-city-rotator {
-					display: inline-block;
-					min-width: 5.5em;
-					text-align: left;
-					color: inherit;
-					border-bottom: 3px solid currentColor;
-					padding-bottom: 2px;
-					transition: opacity 0.35s ease, transform 0.35s ease;
-					will-change: opacity, transform;
-				}
-				.hbx-city-rotator.is-swapping {
-					opacity: 0;
-					transform: translateY(12px);
-				}
-				@media (max-width: 767px) {
-					.elementor-6739 .elementor-element.elementor-element-3d3ad910 .elementor-heading-title {
-						font-size: 32px !important;
-						line-height: 1.2 !important;
-					}
-					.elementor-element-1f6e5280 {
-						display: none !important;
-					}
 				}
 			</style>
 			<link rel="icon" href="../wp-content/uploads/2026/01/cropped-Kusaaa-solar-logo.png" sizes="32x32">
@@ -265,6 +229,7 @@ gtag("config", "GT-TWR8VGFG");
   }]
 }
 </script>
+<link rel="stylesheet" id="hbx-responsive-css" href="../wp-content/hbx-responsive.css" type="text/css" media="all">
 </head>
 <body class="wp-singular page-template page-template-elementor_header_footer page page-id-6739 wp-custom-logo wp-theme-essentials  bg-gray-2  site-render-fade-page-transition elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-6739" style="">
 			<div class="pix-page-loading-bg"></div>
@@ -956,7 +921,7 @@ var XproElementorAddons = {"ajax_url":"https://kusaaasolar.com/wp-admin/admin-aj
 //# sourceURL=xpro-elementor-addons-widgets-js-extra
 /* ]]> */
 </script>
-<script type="text/javascript" src="https://kusaaasolar.com/wp-content/plugins/xpro-elementor-addons/assets/js/xpro-widgets.js?ver=1.7.3" id="xpro-elementor-addons-widgets-js"></script>
+<script type="text/javascript" src="../wp-content/plugins/xpro-elementor-addons/assets/js/xpro-widgets.js?ver=1.7.3" id="xpro-elementor-addons-widgets-js"></script>
 <script type="text/javascript" src="https://kusaaasolar.com/wp-content/plugins/xpro-elementor-addons/assets/vendor/js/sweetalert2.all.min.js?ver=3.0.6" id="sweetalert2-js"></script>
 <script type="text/javascript" src="https://kusaaasolar.com/wp-content/plugins/xpro-elementor-addons-pro/assets/js/xpro-widgets.js?ver=1.4.7" id="xpro-elementor-addons-pro-widgets-js"></script>
 <script type="text/javascript" src="https://kusaaasolar.com/wp-includes/js/dist/hooks.min.js?ver=dd5603f07f9220ed27f1" id="wp-hooks-js"></script>
@@ -1069,28 +1034,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 		</div>
 	</div>
 </div>
-<script id="hbx-city-rotator-js">
-(function () {
-  var cities = ["Varanasi", "Azamgarh", "Mau", "Prayagraj"];
-  var el = document.getElementById("hbx-city-rotator");
-  if (!el) return;
-  var i = 0;
-  setInterval(function () {
-    el.classList.add("is-swapping");
-    setTimeout(function () {
-      i = (i + 1) % cities.length;
-      el.textContent = cities[i];
-      el.classList.remove("is-swapping");
-    }, 350);
-  }, 2800);
-
-  // Ensure background images show even if Elementor lazy-load never runs
-  document.querySelectorAll(".e-con").forEach(function (n) {
-    n.classList.add("e-lazyloaded");
-  });
-})();
-</script>
-
+<script src="../wp-content/hbx-responsive.js" id="hbx-responsive-js" defer></script>
 </body>
 </html>
 
