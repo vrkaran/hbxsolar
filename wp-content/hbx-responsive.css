@@ -687,6 +687,63 @@ body,
   background-size: cover !important;
 }
 
+/* Services image rhythm — keep desktop's generous composition, while removing
+   the oversized Elementor padding that created empty space on tablets/phones. */
+@media (max-width: 1024px) {
+  .elementor-3820 .elementor-element-37ef7ae {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    border-radius: 18px;
+  }
+
+  .elementor-3820 .hbx-services-visual {
+    width: 100% !important;
+    max-width: none !important;
+    aspect-ratio: 1 / 0.9;
+    object-fit: cover;
+  }
+
+  .elementor-3820 .elementor-element-f58b2e3 {
+    min-height: clamp(250px, 52vw, 440px) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 18px !important;
+    background-size: cover !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .elementor-3820 .elementor-element-5417bec {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 14px 0 0 !important;
+    padding: 0 !important;
+  }
+
+  .elementor-3820 .elementor-element-b9b9774,
+  .elementor-3820 .elementor-element-b9b9774 .elementor-widget-container {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .elementor-3820 .elementor-element-b9b9774 img {
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    margin: 0 !important;
+    border-radius: 16px !important;
+    box-shadow: 0 14px 32px rgba(16, 36, 26, 0.12);
+  }
+
+  .elementor-3820 .elementor-element-f58b2e3 {
+    min-height: 260px !important;
+    border-radius: 16px !important;
+  }
+}
+
 /* A clearer footer hierarchy helps the pages land with a corporate finish. */
 #pix-page-footer,
 .elementor-location-footer {
@@ -702,6 +759,45 @@ body,
 .elementor-location-footer .xpro-infolist-item a:hover {
   color: var(--hbx-green-dark);
   transform: translateX(4px);
+}
+
+/* Home partner strip: consistent, restrained logo tiles for an enterprise look. */
+.elementor-3513 .elementor-element-81e1434 .swiper-slide-inner {
+  display: grid;
+  min-height: 112px;
+  place-items: center;
+  padding: 18px;
+  border: 1px solid rgba(16, 36, 26, 0.09);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(16, 36, 26, 0.06);
+  transition: transform 0.28s var(--hbx-ease), box-shadow 0.28s var(--hbx-ease);
+}
+
+.elementor-3513 .elementor-element-81e1434 .swiper-slide-inner:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(16, 36, 26, 0.12);
+}
+
+.elementor-3513 .elementor-element-81e1434 .swiper-slide-image {
+  width: 100%;
+  max-width: 132px;
+  max-height: 60px;
+  object-fit: contain;
+  filter: saturate(0.88) contrast(1.04);
+}
+
+@media (max-width: 767px) {
+  .elementor-3513 .elementor-element-81e1434 .swiper-slide-inner {
+    min-height: 82px;
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .elementor-3513 .elementor-element-81e1434 .swiper-slide-image {
+    max-width: 92px;
+    max-height: 44px;
+  }
 }
 
 @media (max-width: 1024px) {
