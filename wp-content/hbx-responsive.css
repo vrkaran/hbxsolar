@@ -234,6 +234,15 @@ body:not(.render) .pix-overlay-item {
   opacity: 1 !important;
 }
 
+/* Exported theme transitions can hold the next page behind an overlay. Keep
+   navigation immediate while retaining the lighter in-section interactions. */
+.site-render-fade-page-transition,
+.site-render-fade-page-transition #page,
+.site-render-fade-page-transition .site-content {
+  transition: none !important;
+  animation: none !important;
+}
+
 /* Elementor containers: prevent horizontal overflow on small screens */
 @media (max-width: 1024px) {
   .e-con,
@@ -651,6 +660,15 @@ body,
   box-shadow: 0 14px 30px rgba(22, 138, 66, 0.24) !important;
 }
 
+/* Reliable touch targets across CTAs, including legacy Elementor buttons. */
+.elementor-button,
+.xpro-elementor-button,
+a.btn:not(.btn-link) {
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Services: explicit desktop source, isolated from remote/generated background CSS. */
 .elementor-3820 .elementor-element-37ef7ae {
   display: flex !important;
@@ -741,6 +759,188 @@ body,
   .elementor-3820 .elementor-element-f58b2e3 {
     min-height: 260px !important;
     border-radius: 16px !important;
+  }
+}
+
+/* ========== HBX SITE-WIDE EXPERIENCE SYSTEM ========== */
+/* The original Elementor exports define spacing page by page. This shared layer
+   creates one calm, corporate rhythm across About, Services, Contact, Support,
+   and the regional landing page without changing the Home-page narrative. */
+:root {
+  --hbx-section-space: clamp(3.5rem, 7vw, 6.75rem);
+  --hbx-section-space-tight: clamp(2.5rem, 5vw, 4.5rem);
+  --hbx-content-width: 1200px;
+  --hbx-radius-lg: 22px;
+  --hbx-radius-md: 16px;
+}
+
+.elementor-4222,
+.elementor-3820,
+.elementor-4154,
+.elementor-4302,
+.elementor-6739 {
+  background: #f7faf7;
+}
+
+/* Remove inherited spacer bands and align sections to a single scale. */
+.elementor-4222 > .e-con,
+.elementor-3820 > .e-con,
+.elementor-4154 > .e-con,
+.elementor-4302 > .e-con,
+.elementor-6739 > .e-con {
+  position: relative;
+  margin-block: 0 !important;
+}
+
+.elementor-4222 > .e-con:not(:first-child),
+.elementor-3820 > .e-con:not(:first-child),
+.elementor-4154 > .e-con:not(:first-child),
+.elementor-4302 > .e-con:not(:first-child),
+.elementor-6739 > .e-con:not(:first-child) {
+  min-height: 0 !important;
+  padding-block: var(--hbx-section-space) !important;
+}
+
+.elementor-4222 > .e-con > .e-con-inner,
+.elementor-3820 > .e-con > .e-con-inner,
+.elementor-4154 > .e-con > .e-con-inner,
+.elementor-4302 > .e-con > .e-con-inner,
+.elementor-6739 > .e-con > .e-con-inner {
+  width: min(100%, var(--hbx-content-width)) !important;
+  margin-inline: auto !important;
+}
+
+/* A clean, readable baseline for customer-facing solar information. */
+.elementor-4222 .pix-el-text,
+.elementor-3820 .pix-el-text,
+.elementor-4154 .pix-el-text,
+.elementor-4302 .pix-el-text,
+.elementor-6739 .pix-el-text,
+.elementor-4222 .elementor-widget-text-editor,
+.elementor-3820 .elementor-widget-text-editor,
+.elementor-4154 .elementor-widget-text-editor,
+.elementor-4302 .elementor-widget-text-editor,
+.elementor-6739 .elementor-widget-text-editor {
+  color: #52645a;
+  font-size: clamp(0.98rem, 1.2vw, 1.0625rem);
+  line-height: 1.75;
+}
+
+.elementor-4222 .elementor-heading-title,
+.elementor-3820 .elementor-heading-title,
+.elementor-4154 .elementor-heading-title,
+.elementor-4302 .elementor-heading-title,
+.elementor-6739 .elementor-heading-title,
+.elementor-4222 .xpro-heading-title,
+.elementor-3820 .xpro-heading-title,
+.elementor-4154 .xpro-heading-title,
+.elementor-4302 .xpro-heading-title,
+.elementor-6739 .xpro-heading-title {
+  color: var(--hbx-ink);
+  line-height: 1.16;
+}
+
+/* Give service and contact content the quiet structure of a corporate site. */
+.elementor-4222 .pix-card .card,
+.elementor-3820 .pix-card .card,
+.elementor-4154 .pix-card .card,
+.elementor-4302 .pix-card .card,
+.elementor-6739 .pix-card .card,
+.elementor-4222 .elementor-icon-box-wrapper,
+.elementor-3820 .elementor-icon-box-wrapper,
+.elementor-4154 .elementor-icon-box-wrapper,
+.elementor-4302 .elementor-icon-box-wrapper,
+.elementor-6739 .elementor-icon-box-wrapper {
+  border: 1px solid rgba(16, 36, 26, 0.09);
+  border-radius: var(--hbx-radius-md);
+  background: #fff;
+}
+
+.elementor-4222 .pix-card .card-body,
+.elementor-3820 .pix-card .card-body,
+.elementor-4154 .pix-card .card-body,
+.elementor-4302 .pix-card .card-body,
+.elementor-6739 .pix-card .card-body {
+  padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+.elementor-4222 .elementor-widget-image img,
+.elementor-3820 .elementor-widget-image img,
+.elementor-4154 .elementor-widget-image img,
+.elementor-4302 .elementor-widget-image img,
+.elementor-6739 .elementor-widget-image img,
+.elementor-4222 .pix-img-elem,
+.elementor-3820 .pix-img-elem,
+.elementor-4154 .pix-img-elem,
+.elementor-4302 .pix-img-elem,
+.elementor-6739 .pix-img-elem {
+  border-radius: var(--hbx-radius-lg);
+}
+
+.elementor-4222 .elementor-widget-image img,
+.elementor-3820 .elementor-widget-image img,
+.elementor-4154 .elementor-widget-image img,
+.elementor-4302 .elementor-widget-image img,
+.elementor-6739 .elementor-widget-image img {
+  box-shadow: 0 18px 42px rgba(16, 36, 26, 0.12);
+}
+
+/* Contact and support controls feel composed, legible, and touch-friendly. */
+.elementor-4302 input,
+.elementor-4302 textarea,
+.elementor-4302 select,
+.elementor-4154 input,
+.elementor-4154 textarea,
+.elementor-4154 select,
+.elementor .elementor-form input,
+.elementor .elementor-form textarea,
+.elementor .elementor-form select {
+  min-height: 48px;
+  border: 1px solid rgba(16, 36, 26, 0.16) !important;
+  border-radius: 10px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.elementor .elementor-form textarea {
+  min-height: 130px;
+}
+
+.elementor .elementor-form input:focus,
+.elementor .elementor-form textarea:focus,
+.elementor .elementor-form select:focus {
+  border-color: var(--hbx-green-dark) !important;
+  box-shadow: 0 0 0 4px rgba(61, 189, 97, 0.14) !important;
+  outline: 0;
+}
+
+/* The mobile rhythm is deliberately compact: no template-era blank bands. */
+@media (max-width: 767px) {
+  :root {
+    --hbx-section-space: clamp(2.75rem, 11vw, 4rem);
+    --hbx-section-space-tight: 2.25rem;
+  }
+
+  .elementor-4222 > .e-con:not(:first-child),
+  .elementor-3820 > .e-con:not(:first-child),
+  .elementor-4154 > .e-con:not(:first-child),
+  .elementor-4302 > .e-con:not(:first-child),
+  .elementor-6739 > .e-con:not(:first-child) {
+    padding-block: var(--hbx-section-space) !important;
+  }
+
+  .elementor-4222 .elementor-widget-image img,
+  .elementor-3820 .elementor-widget-image img,
+  .elementor-4154 .elementor-widget-image img,
+  .elementor-4302 .elementor-widget-image img,
+  .elementor-6739 .elementor-widget-image img,
+  .elementor-4222 .pix-img-elem,
+  .elementor-3820 .pix-img-elem,
+  .elementor-4154 .pix-img-elem,
+  .elementor-4302 .pix-img-elem,
+  .elementor-6739 .pix-img-elem {
+    border-radius: var(--hbx-radius-md);
   }
 }
 

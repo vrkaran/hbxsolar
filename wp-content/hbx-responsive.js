@@ -119,6 +119,30 @@
       });
     });
 
+    // Warm local pages on intentional navigation. This keeps the static site
+    // responsive without adding a heavy client-side router or loading remote URLs.
+    var prefetched = {};
+    function prefetchInternalPage(link) {
+      var href = link && link.href;
+      if (!href || prefetched[href]) return;
+      try {
+        var url = new URL(href, window.location.href);
+        if (url.origin !== window.location.origin || !/\.(?:html?|htm)$/.test(url.pathname)) return;
+        var preload = document.createElement("link");
+        preload.rel = "prefetch";
+        preload.href = url.href;
+        preload.as = "document";
+        document.head.appendChild(preload);
+        prefetched[href] = true;
+      } catch (ignore) {}
+    }
+
+    document.querySelectorAll("a.xpro-elementor-nav-link, #pix-page-footer a[href]").forEach(function (link) {
+      link.addEventListener("pointerenter", function () { prefetchInternalPage(link); }, { passive: true });
+      link.addEventListener("focus", function () { prefetchInternalPage(link); }, { passive: true });
+      link.addEventListener("touchstart", function () { prefetchInternalPage(link); }, { passive: true, once: true });
+    });
+
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") setNav(false);
     });
