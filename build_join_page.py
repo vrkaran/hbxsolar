@@ -12,7 +12,7 @@ if 'href="/join-hbx-solar/"' not in header:
     header=header.replace('</div>\n<a class="hbx-header__call"','<a href="/join-hbx-solar/">Join HBX Solar</a></div>\n<a class="hbx-header__call"')
 header=header.replace('href="/join-hbx-solar/"','href="/join-hbx-solar/" aria-current="page"')
 shutil.copyfile(root/'wp-content/uploads/2026/01/hbxsolar-logo.png',out/'hbx-solar-logo.png')
-header=header.replace('/wp-content/uploads/2026/01/hbxsolar-logo.png','/join-hbx-solar/hbx-solar-logo.png')
+header=re.sub(r'(<a class="hbx-header__brand".*?<img[^>]*src=")[^"]*(")', lambda m: m[1] + '/wp-content/uploads/2026/01/hbxsolar-logo.png' + m[2], header, flags=re.S)
 footer=re.search(r'<footer\b.*?</footer>',source,re.S).group()
 footer=re.sub(r' (href|src)="(?!https?:|tel:|/|#)([^"]+)"',r' \1="/\2"',footer)
 footer=re.sub(r'https?://(?:www\.)?kusaaasolar.com', '',footer,flags=re.I)
