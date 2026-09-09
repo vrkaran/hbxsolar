@@ -31,7 +31,7 @@
       const response = await fetch(endpoint, { method: 'POST', body: new FormData(form), signal: AbortSignal.timeout(30000) });
       if (!response.ok || (await response.json()).success !== true) throw new Error('Not accepted');
       form.reset();
-      status.textContent = 'Application Submitted Successfully. Thank you for your interest in joining HBX Solar. Our recruitment team will review your application and contact shortlisted candidates.';
+      status.textContent = 'Application Submitted Successfully. Thank you for applying to HBX Solar. Our recruitment team will review your application and contact shortlisted candidates.';
       button.textContent = 'Application submitted';
     } catch {
       status.textContent = 'We could not confirm submission. Your entries are still here. Please contact HBX Solar before retrying if you are unsure whether your application arrived.';

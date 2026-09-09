@@ -1,6 +1,8 @@
 # Join HBX Solar
 
-Route: `/join-hbx-solar/`. Static HTML, page-specific CSS and JavaScript. Uses the existing HBX header, header behavior, fonts, local solar image and copied footer. The only shared change adds the careers link to navigation; other page content is unchanged.
+Route: `/join-hbx-solar/`. Static HTML, page-specific CSS and JavaScript. Uses the existing HBX header, header behavior, fonts, local solar image and copied footer. Eight main sections: hero, journey, training, performance (including career path), professional identity, eligibility, application and FAQ. Five collapsed FAQs; ten essential application fields plus optional resume and consent.
+
+Shared navigation includes the careers link. All 14 HTML page variants now show `Civil Line, Azamgarh` in the footer and duplicated contact address, with matching address map links. Other contact information is unchanged.
 
 Run a local preview from the repository root with `python -m http.server 8080`, then visit `http://localhost:8080/join-hbx-solar/`.
 
@@ -10,7 +12,7 @@ Set `applicationEndpoint` in `config.js` to the approved recruitment endpoint. N
 
 Confirm and update training pay, the successful-customer definition, booking/payment conditions, performance reviews, geographic eligibility and resume requirements before launch. The page transparently identifies missing policies; it does not assume them. The provided company telephone number is reused for recruitment enquiries; confirm it is the intended contact.
 
-The HTML can be edited directly. `../build_join_page.py` regenerates it from the page content and existing site header/footer; keep the generator in sync with subsequent HTML edits. Regeneration leaves CSS, JS and config untouched.
+Edit page content in `../join_content.py`. `../build_join_page.py` regenerates the HTML using that content and the existing site header/footer. Regeneration leaves CSS, JS and config untouched.
 
 ## Validation completed
 
