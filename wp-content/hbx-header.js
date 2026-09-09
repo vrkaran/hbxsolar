@@ -1,6 +1,14 @@
 /* Independent navigation: never modifies body/html styles or intercepts URLs. */
 (function () {
   document.querySelectorAll('.hbx-header').forEach(function (header) {
+    var links = header.querySelector('.hbx-header__links');
+    if (links && !links.querySelector('a[href*="join-hbx-solar"]')) {
+      var careers = document.createElement('a');
+      careers.href = '/join-hbx-solar/';
+      careers.textContent = 'Join HBX Solar';
+      if (location.pathname.indexOf('/join-hbx-solar') === 0) careers.setAttribute('aria-current', 'page');
+      links.appendChild(careers);
+    }
     var button = header.querySelector('.hbx-header__toggle');
     var mobile = window.matchMedia('(max-width: 1050px)');
     function close(restoreFocus) {
