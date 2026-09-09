@@ -1,3 +1,2 @@
-// Set only to a trusted recruitment endpoint that accepts multipart FormData.
-// It must return { "success": true } after durably accepting an application.
-window.HBX_CAREERS = { applicationEndpoint: '' };
+// Opens the applicant's email app with a pre-filled application.
+window.HBX_CAREERS = { applicationEmail: 'careers@hbxsolar.in' };
