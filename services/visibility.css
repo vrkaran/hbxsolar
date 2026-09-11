@@ -1,0 +1,22 @@
+/* Keep original cards visible when legacy animation scripts do not initialize. */
+.elementor-3820 .card.animate-in{opacity:1!important;transform:none!important}
+
+/* Tablet uses a real image; do not paint the same asset behind it. */
+.elementor-3820 .elementor-element.elementor-element-37ef7ae:not(.elementor-motion-effects-element-type-background),
+.elementor-3820 .elementor-element.elementor-element-37ef7ae > .elementor-motion-effects-container > .elementor-motion-effects-layer {
+  background-image:none!important;
+}
+@media (width < 768px) {
+  .elementor-3820 .elementor-element.elementor-element-37ef7ae {display:none!important;}
+}
+@media (min-width:768px) {
+  .elementor-3820 .elementor-element.elementor-element-5417bec {display:none!important;}
+}
+
+/* Complementary ranges also cover fractional viewport widths. */
+@media (width < 1025px) {
+  .elementor-3820 .elementor-element.elementor-element-8d306f1 {display:none!important;}
+}
+@media (width >= 1025px) {
+  .elementor-3820 .elementor-element.elementor-element-d4b873e {display:none!important;}
+}
